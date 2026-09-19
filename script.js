@@ -281,5 +281,46 @@ document.addEventListener("keyup", (e) => {
   if (e.key === "ArrowDown") softDrop = false;
 });
 
+overlay.addEventListener("click", () => {
+  if (paused) {
+    togglePause();
+  } else {
+    startGame();
+  }
+});
+
+function bindTap(id, onDown, onUp) {
+  const el = document.getElementById(id);
+  const start = (e) => {
+    e.preventDefault();
+    if (running && !paused) onDown();
+  };
+  const end = (e) => {
+    e.preventDefault();
+    if (onUp) onUp();
+  };
+  el.addEventListener("touchstart", start, { passive: false });
+  el.addEventListener("mousedown", start);
+  el.addEventListener("touchend", end);
+  el.addEventListener("touchcancel", end);
+  el.addEventListener("mouseup", end);
+  el.addEventListener("mouseleave", end);
+}
+
+bindTap("btnLeft", () => { move(-1, 0); draw(); });
+bindTap("btnRight", () => { move(1, 0); draw(); });
+bindTap("btnRotate", () => tryRotate());
+bindTap("btnDrop", () => hardDrop());
+bindTap(
+  "btnDown",
+  () => { softDrop = true; },
+  () => { softDrop = false; }
+);
+
+document.getElementById("btnPause").addEventListener("click", (e) => {
+  e.preventDefault();
+  togglePause();
+});
+
 resetGame();
 draw();

@@ -9,7 +9,7 @@
     <canvas id="board" width="300" height="600"></canvas>
     <div class="overlay" id="overlay">
       <p id="overlayText">TETRIS</p>
-      <p class="hint">Stiskni <b>Enter</b> pro start</p>
+      <p class="hint"><span class="desktop-hint">Stiskni <b>Enter</b> pro start</span><span class="touch-hint">Klepni pro start</span></p>
     </div>
   </div>
   <aside class="side">
@@ -29,7 +29,7 @@
       <h2>Řádky</h2>
       <p id="lines">0</p>
     </div>
-    <div class="panel controls">
+    <div class="panel controls desktop-hint">
       <h2>Ovládání</h2>
       <p>← → pohyb</p>
       <p>↑ rotace</p>
@@ -38,6 +38,15 @@
       <p>P pauza</p>
     </div>
   </aside>
+</div>
+
+<div class="touch-controls" id="touchControls">
+  <button type="button" class="tbtn" id="btnLeft" aria-label="Vlevo">◀</button>
+  <button type="button" class="tbtn" id="btnRotate" aria-label="Rotace">⟳</button>
+  <button type="button" class="tbtn" id="btnRight" aria-label="Vpravo">▶</button>
+  <button type="button" class="tbtn" id="btnPause" aria-label="Pauza">⏸</button>
+  <button type="button" class="tbtn" id="btnDown" aria-label="Dolů">▼</button>
+  <button type="button" class="tbtn" id="btnDrop" aria-label="Tvrdý pád">⤓</button>
 </div>
 
 <script src="script.js"></script>
