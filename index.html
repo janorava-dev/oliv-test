@@ -1,0 +1,43 @@
+<title>Tetris</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="style.css">
+
+<div class="wrap">
+  <h1>TETRIS</h1>
+  <div class="game">
+    <canvas id="board" width="300" height="600"></canvas>
+    <div class="overlay" id="overlay">
+      <p id="overlayText">TETRIS</p>
+      <p class="hint">Stiskni <b>Enter</b> pro start</p>
+    </div>
+  </div>
+  <aside class="side">
+    <div class="panel">
+      <h2>Další</h2>
+      <canvas id="next" width="100" height="100"></canvas>
+    </div>
+    <div class="panel">
+      <h2>Skóre</h2>
+      <p id="score">0</p>
+    </div>
+    <div class="panel">
+      <h2>Level</h2>
+      <p id="level">0</p>
+    </div>
+    <div class="panel">
+      <h2>Řádky</h2>
+      <p id="lines">0</p>
+    </div>
+    <div class="panel controls">
+      <h2>Ovládání</h2>
+      <p>← → pohyb</p>
+      <p>↑ rotace</p>
+      <p>↓ měkký pád</p>
+      <p>Mezerník tvrdý pád</p>
+      <p>P pauza</p>
+    </div>
+  </aside>
+</div>
+
+<script src="script.js"></script>

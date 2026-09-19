@@ -1,0 +1,115 @@
+:root {
+  color-scheme: dark;
+  --bg: #0b0e14;
+  --panel: #151a24;
+  --border: #2a3142;
+  --text: #e6e8ee;
+  --accent: #7dd3fc;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "Courier New", Consolas, monospace;
+}
+
+.wrap {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  padding: 24px;
+}
+
+h1 {
+  position: absolute;
+  transform: translateY(-52px);
+  letter-spacing: 0.3em;
+  font-size: 20px;
+  margin: 0;
+  color: var(--accent);
+}
+
+.game {
+  position: relative;
+  border: 4px solid var(--border);
+  border-radius: 4px;
+  background: #000;
+  line-height: 0;
+}
+
+canvas#board {
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.82);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
+}
+
+.overlay[hidden] { display: none; }
+
+.overlay p {
+  margin: 0;
+  font-size: 22px;
+  letter-spacing: 0.15em;
+  color: var(--accent);
+}
+
+.overlay .hint {
+  font-size: 13px;
+  color: var(--text);
+  letter-spacing: normal;
+}
+
+.side {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 140px;
+}
+
+.panel {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 10px 12px;
+}
+
+.panel h2 {
+  margin: 0 0 6px;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  color: #8b93a7;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+.panel p {
+  margin: 2px 0;
+  font-size: 16px;
+}
+
+.panel canvas {
+  display: block;
+  background: #000;
+  border-radius: 2px;
+}
+
+.controls p {
+  font-size: 12px;
+  color: #b7bccb;
+}
