@@ -123,14 +123,14 @@ canvas#board {
 
 @media (max-width: 680px), (pointer: coarse) {
   html, body {
-    height: 100vh;
-    height: 100dvh;
+    min-height: 100vh;
+    min-height: 100dvh;
   }
 
   body {
-    overflow: hidden;
+    overflow-y: auto;
     justify-content: flex-start;
-    padding: 6px 6px 8px;
+    padding: 6px 6px calc(8px + env(safe-area-inset-bottom, 0px));
     gap: 6px;
   }
 
